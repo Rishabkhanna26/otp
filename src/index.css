@@ -1,0 +1,32 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:           #0b0f1a;
+  --bg-card:      #111827;
+  --bg-glass:     rgba(255,255,255,0.04);
+  --border:       rgba(255,255,255,0.08);
+  --accent:       #6366f1;
+  --accent-hover: #4f46e5;
+  --accent-glow:  rgba(99,102,241,0.35);
+  --teal:         #14b8a6;
+  --text-pri:     #f1f5f9;
+  --text-sec:     #94a3b8;
+  --text-mute:    #475569;
+  --success:      #22c55e;
+  --error:        #ef4444;
+  --radius:       12px;
+  --radius-lg:    20px;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body:    'Inter', sans-serif;
+}
+
+html  { scroll-behavior: smooth; }
+body  { background: var(--bg); color: var(--text-pri); font-family: var(--font-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a     { color: inherit; text-decoration: none; }
+button, input { font-family: var(--font-body); }
+button { cursor: pointer; border: none; outline: none; }
+input  { outline: none; }
+
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--text-mute); border-radius: 3px; }
