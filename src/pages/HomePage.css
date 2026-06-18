@@ -35,29 +35,7 @@
 .hero__cta  { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
 .hero__note { color: var(--text-mute); font-size: .8rem; }
 
-/* Floating card */
-.hero__card-wrap { position: relative; z-index: 1; flex-shrink: 0; }
-.hero__card {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg);
-  padding: 28px 32px; width: 300px;
-  box-shadow: 0 32px 80px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.04);
-}
-.hero__card-dots { display: flex; gap: 7px; margin-bottom: 24px; }
-.hero__card-dots span { width: 12px; height: 12px; border-radius: 50%; opacity: .8; }
-.hero__card-label { font-size: .75rem; color: var(--text-mute); text-transform: uppercase; letter-spacing: .8px; margin-bottom: 14px; }
-.hero__card-digits { display: flex; gap: 8px; margin-bottom: 16px; }
-.hero__card-digit {
-  width: 38px; height: 44px; background: var(--bg-glass); border: 1.5px solid rgba(99,102,241,.4);
-  border-radius: 8px; display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--teal);
-  animation: fadeUp .5s ease both;
-}
-@keyframes fadeUp { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
-.hero__card-exp { font-size: .75rem; color: var(--text-mute); margin-bottom: 20px; }
-.hero__card-bar {
-  height: 3px; background: linear-gradient(90deg, var(--accent), var(--teal));
-  border-radius: 2px; animation: shrink 10s linear infinite;
-}
+
 @keyframes shrink { from { width:100%; } to { width:0%; } }
 
 /* ── Features ── */
@@ -104,5 +82,4 @@
 @media(max-width:768px) {
   .hero { flex-direction: column; text-align: center; padding-top: 100px; }
   .hero__cta { justify-content: center; }
-  .hero__card-wrap { width: 100%; display: flex; justify-content: center; }
 }

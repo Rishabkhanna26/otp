@@ -4,10 +4,10 @@ import { useAuth } from '../context/AuthContext';
 import './HomePage.css';
 
 const FEATURES = [
-  { icon: '🔐', title: 'No Passwords',    desc: 'Forget creating or remembering passwords. Just your email and a code.' },
-  { icon: '⚡', title: 'Instant Access',  desc: 'Receive your OTP in seconds and get straight into your account.' },
-  { icon: '🕐', title: '48-Hour Sessions',desc: 'Once verified, stay logged in for 48 hours — just like DigiLocker.' },
-  { icon: '🛡️', title: 'Secure by Design',desc: 'OTPs expire in minutes and are single-use — inherently safer than passwords.' },
+  { title: 'No Passwords',    desc: 'Forget creating or remembering passwords. Just your email and a code.' },
+  { title: 'Instant Access',  desc: 'Receive your OTP in seconds and get straight into your account.' },
+  { title: '48-Hour Sessions',desc: 'Once verified, stay logged in for 48 hours — just like DigiLocker.' },
+  { title: 'Secure by Design',desc: 'OTPs expire in minutes and are single-use — inherently safer than passwords.' },
 ];
 
 const STEPS = [
@@ -46,25 +46,6 @@ export default function HomePage() {
             )}
           </div>
           <p className="hero__note">No credit card · No password · Works like DigiLocker</p>
-        </div>
-
-        {/* Floating OTP card */}
-        <div className="hero__card-wrap">
-          <div className="hero__card">
-            <div className="hero__card-dots">
-              <span style={{ background: '#ef4444' }} />
-              <span style={{ background: '#f59e0b' }} />
-              <span style={{ background: '#22c55e' }} />
-            </div>
-            <p className="hero__card-label">Your OTP code</p>
-            <div className="hero__card-digits">
-              {['4','2','7','9','1','3'].map((d, i) => (
-                <span key={i} className="hero__card-digit" style={{ animationDelay: `${i * 0.1}s` }}>{d}</span>
-              ))}
-            </div>
-            <p className="hero__card-exp">Expires in 10:00 · Single-use</p>
-            <div className="hero__card-bar" />
-          </div>
         </div>
       </section>
 
