@@ -12,8 +12,14 @@ const PORT = process.env.BACKEND_PORT || process.env.PORT || 5000;
 
 // ── Middleware ──────────────────────────────────────────────
 app.use(express.json());
-const clientUrl = process.env.CLIENT_URL || 'http://localhost:3000';
-app.use(cors({ origin: clientUrl, credentials: true }));
+const corsOptions = {
+  credentials: true,
+  origin:
+    process.env.NODE_ENV === 'production'
+      ? true
+      : process.env.CLIENT_URL || 'http://localhost:3000',
+};
+app.use(cors(corsOptions));
 
 // Global rate limiter
 app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));

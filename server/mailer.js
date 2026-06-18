@@ -4,11 +4,15 @@ let transporter = null;
 
 function getTransporter() {
   if (transporter) return transporter;
+  const password = process.env.EMAIL_PASS
+    ? process.env.EMAIL_PASS.replace(/['"\s]/g, '')
+    : '';
+
   transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      pass: password,
     },
   });
   return transporter;
